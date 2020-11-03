@@ -1,0 +1,23 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="container">
+    {% for post in review %}
+    <div class="frame review">
+        <div class="row card-top">
+            <div class="col s8 m8 l8">
+                <h5 class="cyan-text username">{{ post.name }}</h5>
+            </div>
+            <div class="col s4 m4 l4">
+                <h6 class="right date">{{ post.date_posted|date:"F d, Y" }}</h6>
+            </div>
+        </div>
+        <br>
+        <div class="card-content">
+            <h6>{{ post.content }}</h6>
+        </div>
+        <br>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
